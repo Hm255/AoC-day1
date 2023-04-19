@@ -15,10 +15,18 @@ describe('calorie block counter', () => {
         expect(typeof calorieCounter(input)).toBe('number');
     });
     test('adds a block of numbers', () => {
-        input=`1000
-        2000
+        input=`1000 
+        2000 
         3000`;
         expect(calorieCounter(input)).toEqual(6000);
+    });
+    test('adds a block of numbers plus along with extra numbers after a gap', () => {
+        input=`1000 
+        2000 
+        3000
+        
+        4000`;
+        expect(calorieCounter(input)).toEqual(10000);
     });
 });
 

@@ -1,11 +1,16 @@
 function CalorieCounter(input){
-   
-    let singleElf = input.split('\n')
-    const elvesArray=singleElf.map((elf) => elf.split('\n'))
-    console.log(elvesArray[0]);
     if (input===''){
         return 0;
     }
-    return Number(input);
+    const singleElf = input.split('\n')
+    const elvesStrArray=singleElf.map((elf) => elf.split('\n'))
+    const elvesArray=elvesStrArray.map((foodItem) => Number(foodItem))
+    console.log(elvesStrArray);
+    const ElvesTotal = elvesArray.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+      );
+      console.log(ElvesTotal);
+
+    return ElvesTotal
 }
 module.exports = CalorieCounter;
